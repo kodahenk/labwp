@@ -24,3 +24,15 @@ require_once _DO_DIR . '/inc/wp-actions.php';
 
 // Codestar Framework
 require_once _DO_DIR . '/libs/csf/init.php';
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    TEST                                    */
+/* -------------------------------------------------------------------------- */
+if (!WP_DEBUG) {
+
+  // pr(get_post_type());
+
+}

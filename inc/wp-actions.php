@@ -72,3 +72,30 @@ function _do_scripts()
   // wp_enqueue_script('_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _DO, true);
 }
 add_action('wp_enqueue_scripts', '_do_scripts');
+
+
+/**
+ * Özel bir WordPress teması veya eklentisi tarafından kullanılabilecek permalink (kalıcı bağlantı) yapısını ayarlayan fonksiyon.
+ *
+ * Bu fonksiyon, yeni permalink yapısını belirler ve `permalink_structure` ayarını günceller.
+ * Ayrıca, yeni yapının etkili olması için rewrite kurallarını yeniden yükler (isteğe bağlı).
+ *
+ * Bu fonksiyon, tema etkinleştirildiğinde veya yeniden etkinleştirildiğinde çağrılabilir.
+ * Ancak, dikkatli olunmalıdır çünkü permalink yapısının değiştirilmesi mevcut bağlantıları etkileyebilir.
+ *
+ * @link https://developer.wordpress.org/reference/functions/update_option/
+ * @link https://developer.wordpress.org/reference/functions/flush_rewrite_rules/
+ */
+function custom_set_permalink_structure() {
+  // Yeni permalink yapısını belirleyin
+  $permalink_structure = '/%category%/%postname%/'; // Örnek bir yapı
+  
+  // permalink_structure ayarını güncelleyin
+  update_option('permalink_structure', $permalink_structure);
+  
+  // Rewrite kuralını yeniden yükle (isteğe bağlı)
+  flush_rewrite_rules();
+}
+
+// Tema etkinleştirildiğinde veya yeniden etkinleştirildiğinde çağrılmasını isterseniz aşağıdaki satırı ekleyebilirsiniz.
+add_action('after_switch_theme', 'custom_set_permalink_structure');
