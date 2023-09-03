@@ -4,14 +4,23 @@ if (!defined('ABSPATH')) {
   die('are you bad boy/girl :(');
 }
 
-/* -------------------------------- Sabitler -------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                  Inc Files                                 */
+/* -------------------------------------------------------------------------- */
+
+// Sabitler
 require_once get_template_directory() . '/inc/constants.php';
 
-/* ---------------------------- PHP Fonksiyonları --------------------------- */
+// PHP Fonksiyonları
 require_once _DO_DIR . '/inc/functions.php';
 
-/* -------------------------- Wordpress add_actions ------------------------- */
+// Wordpress add_actions
 require_once _DO_DIR . '/inc/wp-actions.php';
 
-/* ------------------------------ Libs includes ----------------------------- */
-require_once _DO_DIR . '/libs/csf/codestar-framework.php';
+/* -------------------------------------------------------------------------- */
+/*                                Libs includes                               */
+/* -------------------------------------------------------------------------- */
+
+// Codestar Framework
+require_once _DO_DIR . '/libs/csf/init.php';
