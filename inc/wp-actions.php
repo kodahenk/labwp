@@ -68,7 +68,7 @@ add_action('after_setup_theme', '_do_setup');
 function _do_scripts()
 {
   wp_enqueue_style('devorhan', get_stylesheet_uri(), array(), _DO);
-  wp_enqueue_style('devorhan', get_stylesheet_uri(), array(), _DO);
-  wp_enqueue_script('_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _DO, true);
+  // wp_enqueue_style('devorhan', get_stylesheet_uri(), array(), _DO);
+  // wp_enqueue_script('_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _DO, true);
 }
 add_action('wp_enqueue_scripts', '_do_scripts');

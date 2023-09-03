@@ -12,3 +12,6 @@ require_once _DO_DIR . '/inc/functions.php';
 
 /* -------------------------- Wordpress add_actions ------------------------- */
 require_once _DO_DIR . '/inc/wp-actions.php';
+
+/* ------------------------------ Libs includes ----------------------------- */
+require_once _DO_DIR . '/libs/csf/codestar-framework.php';
